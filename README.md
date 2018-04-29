@@ -1,4 +1,4 @@
-## Udemy class on Bash shell scripting
+# Udemy class on Bash shell scripting
 
  Udemy class on Bash shell scripting, taught by Jason Cannon of
  LinuxTrainingAcademy.com.  Interesting class so far; class is taught by
@@ -7,7 +7,7 @@
  I'll be bouncing around between several Linux boxes, so I thought I'd
  better create a repo for the class.  
 
- # Virtualbox and Vagrant requirements
+ ## Virtualbox and Vagrant requirements
 
  One thing to note is that while there are instructions for installing
  Vagrant and Virtual box for Windows and Mac, and also Centos/RedHat
@@ -23,7 +23,7 @@
  installation.  You also might have to make sure that virtual machines
  are enabled in the BIOS, which they probably are on a newer 64-bit box.
 
- # Early Impression
+ ## Early Impression
 
  So far so good.  The guy sounds like an experienced Linux guy.  He's
  already identified several things that are "the old way" of doing
