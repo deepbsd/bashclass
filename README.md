@@ -23,6 +23,20 @@
  installation.  You also might have to make sure that virtual machines
  are enabled in the BIOS, which they probably are on a newer 64-bit box.
 
+ The Arch-based distros seem to like a reboot after installing their
+ packages, and inserting the `vboxdrv` module right away did *not* work
+ for me.  However, once I did a `lsmod` after a reboot, I saw that all
+ my virtualbox modules had been loaded.  This was Antergos and Manjaro.
+ (I had to edit a modules.conf file for the virtualbox service on
+ Antergos.)
+
+ Once you get Vagrant and Virtualbox installed, you'll need to add a
+ particular box to Vagrant:
+
+ ```vagrant box add jasonc/centos7```
+
+
+
  ## Early Impression
 
  So far so good.  The guy sounds like an experienced Linux guy.  He's
