@@ -24,7 +24,7 @@ USER_NAME=${1}
 COMMENT=${@:2}
 
 # Generate a password.
-PASSWORD=$(date +%s%N | sha256sum | head -c8)
+PASSWORD=$(date +%s%N | sha256sum | head -c10)
 
 
 # Creates a new user on the local system 
