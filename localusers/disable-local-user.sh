@@ -22,7 +22,7 @@ usage(){
 
 # check uid of person running the script
 check_uid(){
-    USER_ID=$1
+    local USER_ID=$1
     if [[ "${USER_ID}" -ne 0 ]]
     then
         echo "Need to run as root." 
@@ -53,7 +53,7 @@ expire_user(){
 # only disables a users account but doesn't delete his/her home directory
 disable_user(){
 	#echo "called disable_user()"
-    USER=$1
+    local USER=$1
     userdel ${USER}
 	[[ "${?}" -eq 0 ]] || (echo "Account could not be disabled."  && exit 1)
     echo "Accounte ${USER} disabled."
@@ -63,7 +63,7 @@ disable_user(){
 # deletes a user from the system along with his/her home directory
 delete_user(){
 	#echo "called delete_user()"
-    USER=$1
+    local USER=$1
     userdel -r ${USER}
 	[[ "${?}" -eq 0 ]] || (echo "Account could not be deleted."  && exit 1)
     echo "Account ${USER} deleted."
@@ -73,7 +73,7 @@ delete_user(){
 # create an archive of user's home directory
 archive_user(){
 	#echo "called archive_user()"
-    USER=$1
+    local USER=$1
     [[ -d "${ARCHIVE_DIR}" ]] || mkdir -p ${ARCHIVE_DIR}
     [[ ! -d "/home/${USER}" ]] && echo "${USER}'s home directory doesn't exist"  && exit 1
     [[ -d "/home/${USER}" ]] && tar cvPfz "${ARCHIVE_DIR}/${USER}.tar.gz" "/home/${USER}" &> /dev/null && echo "/home/${USER} directory archived."
